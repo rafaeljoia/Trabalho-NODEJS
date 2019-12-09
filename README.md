@@ -7,6 +7,16 @@ Este trabalho contempla dois projetos:
 - ### Projeto: **GuiaPress:**
 [http://167.172.252.180:9090/
 
+# IMPORTANTE:
+Para gerenciamento dos conteudos do APP GuiaPress, utilize:
+URL: http://167.172.252.180:9090/admin/articles/
+- login: admin@inatel.br
+- password:123345
+OBS: Tempo de sessão 180000ms = 5 minutos, após isso, o APP solicita login novamente para o gerenciamento de conteudos.
+
+
+
+
 
 As aplicações foram hospedados na VPS: **Digital Ocean** - [https://www.digitalocean.com/](https://www.digitalocean.com/)
 
@@ -26,3 +36,4 @@ Prof: Vitor Lima
 - Framework Bootstrap
 - Middleware 
 - Node Authenticate
+- Tempo de Sessão para expiração de autentição
