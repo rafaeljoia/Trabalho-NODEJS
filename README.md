@@ -39,4 +39,4 @@ Prof: Vitor Lima
 - Framework Bootstrap
 - Middleware 
 - Node Authenticate
-- Tempo de Sessão para expiração de autentição
+- Tempo de Sessão para expiração de autenticação
