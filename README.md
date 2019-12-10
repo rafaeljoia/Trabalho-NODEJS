@@ -7,12 +7,15 @@ Este trabalho contempla dois projetos:
 - ### Projeto: **GuiaPress:**
 [http://167.172.252.180:9090/
 
-# IMPORTANTE:
+## IMPORTANTE:
 Para gerenciamento dos conteudos do APP GuiaPress, utilize:
 URL: http://167.172.252.180:9090/admin/articles/
 - login: admin@inatel.br
 - password:123345
 OBS: Tempo de sessão 180000ms = 5 minutos, após isso, o APP solicita login novamente para o gerenciamento de conteudos.
+
+## Qualquer usuário pode criar um novo usuário:
+http://167.172.252.180:9090/admin/users
 
 
 
