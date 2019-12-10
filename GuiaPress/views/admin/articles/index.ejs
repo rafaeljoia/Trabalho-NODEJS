@@ -1,0 +1,57 @@
+<%- include ../../partials/header.ejs %>
+<%- include ../../partials/navbar.ejs %>
+
+<div class="container">
+    <hr>
+    <h2>Articles</h2>
+    <a class="btn btn-success" href="/admin/articles/new">New Article</a>
+    <hr>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+               <th>ID</th>
+               <th>TITLE</th>
+               <th>SLUG</th>
+               <th>CATEGORY</th>
+               <th>ACTIONS</th>
+            </tr>   
+        </thead>
+        <tbody>
+            <% articles.forEach(article =>{ %>
+            <tr>
+                <th><%= article.id %></th>
+                <th><%= article.title %></th>
+                <th><%= article.slug %></th>
+                <th><%= article.category.title %></th>
+               
+                <th>
+                    <input type="hidden" name="id" value="<%= article.id %>"><a href="/articles/edit/<%= article.id %>" class="btn btn-warning">Edit</a>
+                    <form method="POST" onsubmit="canDelete(event, this)" action="/articles/delete" style="display:inline"><input type="hidden" name="id" value="<%= article.id %>"><button class="btn btn-danger">Delete</button></form>
+                </th>
+            </tr>
+            
+            <% }) %>
+            
+        </tbody>
+    </table>
+
+</div>
+
+<%- include ../../partials/footer.ejs %>
+
+<script>
+function canDelete(event, form){
+    event.preventDefault();//prevent irá impedir a submissão do formulário.
+   var decision = confirm("Você quer deletar este artigo?");
+
+   if(decision){
+    form.submit();
+   }else{
+
+   }
+
+
+}
+
+</script>

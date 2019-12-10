@@ -1,0 +1,54 @@
+<%- include ../../partials/header.ejs %>
+<%- include ../../partials/navbar.ejs %>
+
+<div class="container">
+    <hr>
+    <h2>Categorias</h2>
+    <a class="btn btn-success" href="/admin/categories/new">New Category</a>
+    <hr>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+               <th>ID</th>
+               <th>TITLE</th>
+               <th>SLUG</th>
+               <th>ACTIONS</th>
+            </tr>   
+        </thead>
+        <tbody>
+            <% categories.forEach(category =>{ %>
+            <tr>
+                <th><%= category.id %></th>
+                <th><%= category.title %></th>
+                <th><%= category.slug %></th>
+                <th>
+                    <input type="hidden" name="id" value="<%= category.id %>"><a href="/categories/edit/<%= category.id%>" class="btn btn-warning">Edit</a>
+                    <form method="POST" onsubmit="canDelete(event, this)" action="/categories/delete" style="display:inline"><input type="hidden" name="id" value="<%= category.id %>"><button class="btn btn-danger">Delete</button></form>
+                </th>
+            </tr>
+            
+            <% }) %>
+            
+        </tbody>
+    </table>
+
+</div>
+
+<%- include ../../partials/footer.ejs %>
+
+<script>
+function canDelete(event, form){
+    event.preventDefault();//prevent irá impedir a submissão do formulário.
+   var decision = confirm("Você quer deletes esta categoria?");
+
+   if(decision){
+    form.submit();
+   }else{
+
+   }
+
+
+}
+
+</script>
